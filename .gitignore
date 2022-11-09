@@ -1,0 +1,8 @@
+# NodeJS
+node_modules/
+
+# macOS
+.DS_Store
+
+# Any file that is prefixed with an underscore is considered private and not committed
+**/_*
