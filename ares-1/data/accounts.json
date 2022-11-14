@@ -1,10 +1,10 @@
 {
   "deployer_multisig_signers": [
     "mars1z926ax906k0ycsuckele6x5hh66e2m4m09whw6",
-    "mars10xs295pw83xuq07jtj65rrx2pwe0rejwmydgky",
-    "mars155we2hr2txjgxus6u07805werwu5qxxx3dncv3",
-    "mars14g2m53fqjvgsvruhje52a2kr7ea2fczwl9r0pf",
-    "mars1mpxspx2tnts252p3w2yv0w8qzseec0p9fvpx6k"
+    "mars1w3lrkt6gxh9zl04desc2daxxepmkxm0lvt29yd",
+    "mars1fgyjjx9xa80c5mf5xupdd0uw6jsv0t8vzdhwj9",
+    "mars1mpxspx2tnts252p3w2yv0w8qzseec0p9fvpx6k",
+    "mars1un9vye2mlk0cxhe59x264n3r0h8rsr2wf5q0fa"
   ],
   "vesting_multisig_signers": [
     "mars149j66kcxshy823u6llukn4rm9xqxntu2x59n6z",

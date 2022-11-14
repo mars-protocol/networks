@@ -58,7 +58,7 @@ const users: AirdropUser[] = JSON.parse(
 const totalAirdropAmount = users.reduce((a, b) => a + b.amount, 0);
 const delegatorAmount = 50_000_000_000_000;
 balances.push({
-  address: "mars1pkkpfx7qry6wk4mp7ufa506am9hj8f3mat8vw9",
+  address: "mars15mwq8jc7sf0r8hu6phahfsmqg3fagt7ysyd3un",
   coins: coins(totalAirdropAmount + delegatorAmount),
 });
 
