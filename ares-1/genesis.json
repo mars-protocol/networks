@@ -584,69 +584,7 @@
       "allowances": []
     },
     "genutil": {
-      "gen_txs": [
-        {
-          "body": {
-            "messages": [
-              {
-                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
-                "description": {
-                  "moniker": "Larry Engineer",
-                  "identity": "28DC4101DA38C22C",
-                  "website": "https://larry.engineer",
-                  "security_contact": "gm@larry.engineer",
-                  "details": "developer"
-                },
-                "commission": {
-                  "rate": "0.050000000000000000",
-                  "max_rate": "0.200000000000000000",
-                  "max_change_rate": "0.010000000000000000"
-                },
-                "min_self_delegation": "1",
-                "delegator_address": "mars1z926ax906k0ycsuckele6x5hh66e2m4m09whw6",
-                "validator_address": "marsvaloper1z926ax906k0ycsuckele6x5hh66e2m4mmfjz2l",
-                "pubkey": {
-                  "@type": "/cosmos.crypto.ed25519.PubKey",
-                  "key": "iMKK4Tokd53gUTjnWmyEuuo9lvr8EI12iZr674zQCW4="
-                },
-                "value": {
-                  "denom": "umars",
-                  "amount": "1000000"
-                }
-              }
-            ],
-            "memo": "fe69062eb0ecc29050f0ffb803cf38784aba0978@192.168.1.75:26656",
-            "timeout_height": "0",
-            "extension_options": [],
-            "non_critical_extension_options": []
-          },
-          "auth_info": {
-            "signer_infos": [
-              {
-                "public_key": {
-                  "@type": "/cosmos.crypto.secp256k1.PubKey",
-                  "key": "A4wf9LVqFHPntf7nNu1Wy8/8nQZN5C6xWvZ5E6tMrwG8"
-                },
-                "mode_info": {
-                  "single": {
-                    "mode": "SIGN_MODE_DIRECT"
-                  }
-                },
-                "sequence": "0"
-              }
-            ],
-            "fee": {
-              "amount": [],
-              "gas_limit": "200000",
-              "payer": "",
-              "granter": ""
-            }
-          },
-          "signatures": [
-            "gkXum+p37WFvrqXKVrgYVD27R7QsyrmGOFfyeZ9S6dgDNiAUfUfwOoTpwIl5FkzBJYWqSqnw3x470oBs/DDwsg=="
-          ]
-        }
-      ]
+      "gen_txs": []
     },
     "gov": {
       "starting_proposal_id": "1",
