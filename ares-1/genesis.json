@@ -100,6 +100,13 @@
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "mars15qf8yzfjymddkwp8mnmxyqd9fhedhxnxwy4hpf",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
           "address": "mars1668tvskzu8enljj28wsh305detl6d4fnhr8xem",
           "pub_key": null,
           "account_number": "0",
@@ -796,6 +803,10 @@
             "label": "mars-vesting-owner",
             "msg": {
               "voters": [
+                {
+                  "addr": "mars15qf8yzfjymddkwp8mnmxyqd9fhedhxnxwy4hpf",
+                  "weight": 1
+                },
                 {
                   "addr": "mars149j66kcxshy823u6llukn4rm9xqxntu2x59n6z",
                   "weight": 1

@@ -158,6 +158,10 @@ msgs.push({
     msg: {
       voters: [
         {
+          addr: "mars15qf8yzfjymddkwp8mnmxyqd9fhedhxnxwy4hpf",
+          weight: 1,
+        },
+        {
           addr: "mars149j66kcxshy823u6llukn4rm9xqxntu2x59n6z",
           weight: 1,
         },
