@@ -751,7 +751,7 @@
       "params": {
         "code_upload_access": {
           "permission": "OnlyAddress",
-          "address": "mars1pkkpfx7qry6wk4mp7ufa506am9hj8f3mat8vw9"
+          "address": "mars15mwq8jc7sf0r8hu6phahfsmqg3fagt7ysyd3un"
         },
         "instantiate_default_permission": "Everybody"
       },
