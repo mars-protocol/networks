@@ -11,6 +11,15 @@
     "mars149j66kcxshy823u6llukn4rm9xqxntu2x59n6z",
     "mars1wny49dmcp8we5hqxjs06t0z3hkyrvf9mz2zhqk"
   ],
+  "apollo_multisig_signers": [
+    "mars1w4yv8uvc0neqhxwqsg0qm0axlt8wcms4hxwmd4",
+    "mars1jssn7m7u06jwe6ckzgxwsqs4uqlmyljfuffwkq",
+    "mars18kmnpjw6mj7juw6wmnzdyaa8e2tg9h3m49wx8j",
+    "mars18fsecpmq5tuq59k3ezkrrdt6gyvr30lxdd956y",
+    "mars18h47lm65q0r02gcuxe6vslk8u5ftgrl9m9ps7n",
+    "mars1q4sc87yuf9s2x6r8tqafhu646u34t30puamn42",
+    "mars16u56nw6rhdt5wc63ammgdn565q6t825mc7rq7g"
+  ],
   "validators": [
     "mars1xmcmcscsmup8vwly5ak9r9trsvwrqvehrjrkaa",
     "mars176xsanyu3hmwzctxq36gk7nnwk85xk5npcew4n"

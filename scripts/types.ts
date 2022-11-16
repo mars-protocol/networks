@@ -61,6 +61,7 @@ export type Coin = {
 export type Accounts = {
   deployer_multisig_signers: string[];
   vesting_multisig_signers: string[];
+  apollo_multisig_signers: string[];
   validators: string[];
   vesting_recipients: string[];
   faucet?: string;

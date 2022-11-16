@@ -11,6 +11,7 @@ const accounts: Accounts = JSON.parse(
 const allAccounts = [
   ...accounts.deployer_multisig_signers,
   ...accounts.vesting_multisig_signers,
+  ...accounts.apollo_multisig_signers,
   ...accounts.validators,
   ...accounts.vesting_recipients,
 ];

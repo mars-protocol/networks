@@ -196,13 +196,37 @@ msgs.push({
     msg: {
       voters: [
         {
-          addr: "mars1z926ax906k0ycsuckele6x5hh66e2m4m09whw6",
+          addr: "mars1w4yv8uvc0neqhxwqsg0qm0axlt8wcms4hxwmd4",
+          weight: 1,
+        },
+        {
+          addr: "mars1jssn7m7u06jwe6ckzgxwsqs4uqlmyljfuffwkq",
+          weight: 1,
+        },
+        {
+          addr: "mars18kmnpjw6mj7juw6wmnzdyaa8e2tg9h3m49wx8j",
+          weight: 1,
+        },
+        {
+          addr: "mars18fsecpmq5tuq59k3ezkrrdt6gyvr30lxdd956y",
+          weight: 1,
+        },
+        {
+          addr: "mars18h47lm65q0r02gcuxe6vslk8u5ftgrl9m9ps7n",
+          weight: 1,
+        },
+        {
+          addr: "mars1q4sc87yuf9s2x6r8tqafhu646u34t30puamn42",
+          weight: 1,
+        },
+        {
+          addr: "mars16u56nw6rhdt5wc63ammgdn565q6t825mc7rq7g",
           weight: 1,
         },
       ],
       threshold: {
         absolute_count: {
-          weight: 1,
+          weight: 4,
         },
       },
       max_voting_period: {
