@@ -1,14 +1,16 @@
 import * as fs from "fs";
 import * as os from "os";
 import * as path from "path";
-import { Accounts, GenesisState } from "./types";
+import { addressTerraToMars } from "./bech32";
+import { Accounts, AirdropUser, GenesisState } from "./types";
 
 const CHAIN_ID = "ares-1";
 
+// add deployer, multisig signers, validators, ...
 const accounts: Accounts = JSON.parse(
   fs.readFileSync(path.resolve(__dirname, `../${CHAIN_ID}/data/accounts.json`), "utf8")
 );
-const allAccounts = [
+let allAccounts = [
   ...accounts.deployer_multisig_signers,
   ...accounts.vesting_multisig_signers,
   ...accounts.apollo_multisig_signers,
@@ -19,6 +21,14 @@ if (!!accounts.faucet) {
   allAccounts.push(accounts.faucet);
 }
 
+// add airdrop recipients
+const users: AirdropUser[] = JSON.parse(
+  fs.readFileSync(path.resolve(__dirname, `../${CHAIN_ID}/data/airdrop.json`), "utf8")
+);
+const userMarsAddresses = users.map((user) => addressTerraToMars(user.address));
+allAccounts = allAccounts.concat(...userMarsAddresses);
+
+// sort all accounts alphabetically
 allAccounts.sort();
 
 const genAccounts = allAccounts.map((address) => ({

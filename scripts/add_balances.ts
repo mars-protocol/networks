@@ -1,6 +1,8 @@
 import * as fs from "fs";
 import * as os from "os";
 import * as path from "path";
+import { addressTerraToMars } from "./bech32";
+import { CHAIN_ID, CONTRACTS, DEPLOYER } from "./constants";
 import { Accounts, AirdropUser, Coin, GenesisState, VestingPosition } from "./types";
 
 type Balance = {
@@ -16,8 +18,6 @@ function coins(amount: number) {
     },
   ];
 }
-
-const CHAIN_ID = "ares-1";
 
 const accounts: Accounts = JSON.parse(
   fs.readFileSync(path.resolve(__dirname, `../${CHAIN_ID}/data/accounts.json`), "utf8")
@@ -41,25 +41,21 @@ for (const validator of accounts.validators) {
 
 // vesting owner gets 10,000,000 MARS
 balances.push({
-  address: "mars1ghd753shjuwexxywmgs4xz7x2q732vcnkm6h2pyv9s6ah3hylvrqn7y4x6",
+  address: CONTRACTS.VESTING_OWNER,
   coins: coins(10_000_000_000_000),
 });
 
 // apollo warchest gets 399263941331 umars
 balances.push({
-  address: "mars1xt4ahzz2x8hpkc0tk6ekte9x6crw4w6u0r67cyt3kz9syh24pd7sqrzfx3",
+  address: CONTRACTS.APOLLO,
   coins: coins(399_263_941_331),
 });
 
-// the deployer needs to have the total airdrop amount + delegator amount
-const users: AirdropUser[] = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, `../${CHAIN_ID}/data/airdrop.json`), "utf8")
-);
-const totalAirdropAmount = users.reduce((a, b) => a + b.amount, 0);
+// the deployer needs to have the delegator amount
 const delegatorAmount = 50_000_000_000_000;
 balances.push({
-  address: "mars15mwq8jc7sf0r8hu6phahfsmqg3fagt7ysyd3un",
-  coins: coins(totalAirdropAmount + delegatorAmount),
+  address: DEPLOYER,
+  coins: coins(delegatorAmount),
 });
 
 // the vesting contract owner needs to have the total vesting amount
@@ -67,11 +63,20 @@ const positions: VestingPosition[] = JSON.parse(
   fs.readFileSync(path.resolve(__dirname, `../${CHAIN_ID}/data/vesting.json`), "utf8")
 );
 const totalVestingAmount = positions.reduce((a, b) => a + Number(b.amount), 0);
-const index = balances.findIndex(
-  (balance) => balance.address === "mars1ghd753shjuwexxywmgs4xz7x2q732vcnkm6h2pyv9s6ah3hylvrqn7y4x6"
-);
+const index = balances.findIndex((balance) => balance.address === CONTRACTS.VESTING_OWNER);
 const currentAmount = Number(balances[index]!.coins[0]!.amount);
 balances[index]!.coins[0]!.amount = (currentAmount + totalVestingAmount).toString();
+
+// airdrop recipients
+const users: AirdropUser[] = JSON.parse(
+  fs.readFileSync(path.resolve(__dirname, `../${CHAIN_ID}/data/airdrop.json`), "utf8")
+);
+for (const user of users) {
+  balances.push({
+    address: addressTerraToMars(user.address),
+    coins: coins(user.amount),
+  });
+}
 
 // all the rest goes to community pool
 const total = balances.reduce((a, b) => a + Number(b.coins[0]!.amount), 0);
@@ -81,6 +86,7 @@ balances.push({
   coins: coins(communityPool),
 });
 
+// sort balances by amount descendingly
 balances.sort((a, b) => {
   const aAmount = Number(a.coins[0]!.amount);
   const bAmount = Number(b.coins[0]!.amount);

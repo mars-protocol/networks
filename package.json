@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "bech32": "^2.0.0",
     "jscrypto": "^1.0.3",
     "merkletreejs": "^0.3.0",
     "ts-node": "^10.9.1"
