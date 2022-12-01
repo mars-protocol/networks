@@ -1,24 +1,8 @@
 import * as fs from "fs";
 import * as os from "os";
 import * as path from "path";
-import { createMerkleTree } from "./merkle_tree";
+import { CHAIN_ID, CONTRACTS, DEPLOYER } from "./constants";
 import { GenesisState, Msg, VestingPosition } from "./types";
-
-const CHAIN_ID = "ares-1";
-
-// The developer multisig
-// This should be a Cosmos SDK native multisig created off-chain
-const DEPLOYER = "mars15mwq8jc7sf0r8hu6phahfsmqg3fagt7ysyd3un";
-
-// Contract addresses are derived determinictically from code id and instance id, which we can
-// predict beforehand.
-const CONTRACTS = {
-  VESTING: "mars14hj2tavq8fpesdwxxcu44rty3hh90vhujrvcmstl4zr3txmfvw9smxjtde",
-  AIRDROP: "mars1nc5tatafv6eyq7llkr2gv50ff9e22mnf70qgjlv737ktmt4eswrqhnhf0l",
-  DELEGATOR: "mars17p9rzwnnfxcjp32un9ug7yhhzgtkhvl9jfksztgw5uh69wac2pgs0gfvxm",
-  VESTING_OWNER: "mars1ghd753shjuwexxywmgs4xz7x2q732vcnkm6h2pyv9s6ah3hylvrqn7y4x6",
-  APOLLO: "mars1xt4ahzz2x8hpkc0tk6ekte9x6crw4w6u0r67cyt3kz9syh24pd7sqrzfx3",
-};
 
 const msgs: Msg[] = [];
 
@@ -38,24 +22,8 @@ msgs.push({
   },
 });
 
-// Store airdrop contract code
-// code id: 2
-const airdropWasm = fs.readFileSync(
-  path.resolve(__dirname, `../${CHAIN_ID}/contracts/mars_airdrop.wasm`)
-);
-msgs.push({
-  store_code: {
-    sender: DEPLOYER,
-    wasm_byte_code: airdropWasm.toString("base64"),
-    instantiate_permission: {
-      permission: "OnlyAddress",
-      address: DEPLOYER,
-    },
-  },
-});
-
 // Store delegator contract code
-// code id: 3
+// code id: 2
 const delegatorWasm = fs.readFileSync(
   path.resolve(__dirname, `../${CHAIN_ID}/contracts/mars_delegator.wasm`)
 );
@@ -71,7 +39,7 @@ msgs.push({
 });
 
 // Store multisig contract code
-// code id: 4
+// code id: 3
 const cw3Wasm = fs.readFileSync(
   path.resolve(__dirname, `../${CHAIN_ID}/contracts/cw3_fixed_multisig.wasm`)
 );
@@ -105,32 +73,12 @@ msgs.push({
   },
 });
 
-// Instantiate airdrop contract
-const { root, totalAmount } = createMerkleTree(CHAIN_ID);
-msgs.push({
-  instantiate_contract: {
-    sender: DEPLOYER,
-    admin: DEPLOYER,
-    code_id: 2,
-    label: "mars-airdrop",
-    msg: {
-      merkle_root: root.toString("hex"),
-    },
-    funds: [
-      {
-        denom: "umars",
-        amount: totalAmount.toString(),
-      },
-    ],
-  },
-});
-
 // Tnstantiate delegator contract
 msgs.push({
   instantiate_contract: {
     sender: DEPLOYER,
     admin: DEPLOYER,
-    code_id: 3,
+    code_id: 2,
     label: "mars-delegator",
     msg: {
       bond_denom: "umars",
@@ -153,7 +101,7 @@ msgs.push({
   instantiate_contract: {
     sender: DEPLOYER,
     admin: CONTRACTS.VESTING_OWNER,
-    code_id: 4,
+    code_id: 3,
     label: "mars-vesting-owner",
     msg: {
       voters: [
@@ -191,7 +139,7 @@ msgs.push({
   instantiate_contract: {
     sender: DEPLOYER,
     admin: CONTRACTS.APOLLO,
-    code_id: 4,
+    code_id: 3,
     label: "apollo-warchest",
     msg: {
       voters: [
