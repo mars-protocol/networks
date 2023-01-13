@@ -4,10 +4,10 @@ This repo contains instructions for genesis validators to create genesis staking
 
 ## Instructions
 
-Install Go 1.18+. On Ubuntu this can be done by:
+Install Go 1.19+. On Ubuntu this can be done by:
 
 ```bash
-wget -q -O - https://go.dev/dl/go1.19.2.linux-amd64.tar.gz | sudo tar xvzf - -C /usr/local
+wget -q -O - https://go.dev/dl/go1.19.5.linux-amd64.tar.gz | sudo tar xvzf - -C /usr/local
 ```
 
 Configure relevant environment variables:
