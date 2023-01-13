@@ -65,3 +65,7 @@ marsd genesis gentx validator 1000000umars \
 ```
 
 The gentx can be found in `~/.mars/config/gentx/gentx-<hash>.json`. Add the file to this repository under the `mars-1/gentxs` folder by making a PR.
+
+## License
+
+Contents of this repository are open source under [GNU General Public License v3](./LICENSE) or later.
