@@ -9,7 +9,7 @@ This folder contains genesis data for the testnet `ares-1` and instructions on h
 | genesis.json   | https://raw.githubusercontent.com/mars-protocol/networks/main/ares-1/genesis.json |
 | git tag        | v1.0.0-rc7                                                                        |
 | block explorer | https://testnet-explorer.marsprotocol.io                                          |
-| seeds          | TBA                                                                               |
+| seeds          | `2ee39b7648d17f90fab0f9800faa9374e7573fc6@104.248.41.168:26656,ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@testnet-seeds.polkachu.com:18556`                                                                              |
 
 ## Requirements
 
@@ -101,7 +101,7 @@ wget -O ~/.mars/config/genesis.json https://raw.githubusercontent.com/mars-proto
 Set seed node(s):
 
 ```sh
-export SEEDS=TBD
+export SEEDS=`2ee39b7648d17f90fab0f9800faa9374e7573fc6@104.248.41.168:26656,ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@testnet-seeds.polkachu.com:18556`
 sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/" ~/.mars/config/config.toml
 ```
 
