@@ -22,7 +22,10 @@
           "@type": "/cosmos.crypto.ed25519.PubKey",
           "key": "bY7x2vwo17q5rVDztjwBRmsls1nfq+KCAa5ZPOr2xSs="
         },
-        "value": { "denom": "umars", "amount": "1000000" }
+        "value": {
+          "denom": "umars",
+          "amount": "1000000"
+        }
       }
     ],
     "memo": "2d45c3456167591575cef1ac9b6fe3a8d932c185@0.0.0.0:26656",
@@ -37,11 +40,20 @@
           "@type": "/cosmos.crypto.secp256k1.PubKey",
           "key": "A1fayu8VtWPpwUJWnCCTSqdjKbkr+c3gW/v8HNRAXfql"
         },
-        "mode_info": { "single": { "mode": "SIGN_MODE_DIRECT" } },
+        "mode_info": {
+          "single": {
+            "mode": "SIGN_MODE_DIRECT"
+          }
+        },
         "sequence": "0"
       }
     ],
-    "fee": { "amount": [], "gas_limit": "200000", "payer": "", "granter": "" }
+    "fee": {
+      "amount": [],
+      "gas_limit": "200000",
+      "payer": "",
+      "granter": ""
+    }
   },
   "signatures": [
     "CpgCF7pUBZWdklqEiis/gPqND8ECJIukQwPOGKzRR3EZTCkFl9a7y/C7zM/Yg44k18sXD3ag8bB6yhQT+GzzIw=="
