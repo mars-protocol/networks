@@ -1,4 +1,4 @@
-export const CHAIN_ID = "ares-1";
+export const CHAIN_ID = "mars-1";
 
 // The developer multisig
 // This should be a Cosmos SDK native multisig created off-chain

@@ -2,9 +2,8 @@ import * as fs from "fs";
 import * as os from "os";
 import * as path from "path";
 import { addressTerraToMars } from "./bech32";
+import { CHAIN_ID } from "./constants";
 import { Accounts, AirdropUser, GenesisState } from "./types";
-
-const CHAIN_ID = "ares-1";
 
 // add deployer, multisig signers, validators, ...
 const accounts: Accounts = JSON.parse(
