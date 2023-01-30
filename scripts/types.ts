@@ -29,6 +29,7 @@ export type MsgStoreCode = {
     instantiate_permission: {
       permission: string;
       address: string | null;
+      addresses: string[];
     };
   };
 };

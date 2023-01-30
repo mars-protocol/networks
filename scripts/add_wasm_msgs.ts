@@ -16,8 +16,9 @@ msgs.push({
     sender: DEPLOYER,
     wasm_byte_code: vestingWasm.toString("base64"),
     instantiate_permission: {
-      permission: "OnlyAddress",
-      address: DEPLOYER,
+      permission: "AnyOfAddresses",
+      address: "",
+      addresses: [DEPLOYER],
     },
   },
 });
@@ -32,8 +33,9 @@ msgs.push({
     sender: DEPLOYER,
     wasm_byte_code: delegatorWasm.toString("base64"),
     instantiate_permission: {
-      permission: "OnlyAddress",
-      address: DEPLOYER,
+      permission: "AnyOfAddresses",
+      address: "",
+      addresses: [DEPLOYER],
     },
   },
 });
@@ -48,8 +50,9 @@ msgs.push({
     sender: DEPLOYER,
     wasm_byte_code: cw3Wasm.toString("base64"),
     instantiate_permission: {
-      permission: "Everybody",
-      address: null,
+      permission: "AnyOfAddresses",
+      address: "",
+      addresses: [DEPLOYER],
     },
   },
 });
