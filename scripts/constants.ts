@@ -2,7 +2,7 @@ export const CHAIN_ID = "ares-1";
 
 // The developer multisig
 // This should be a Cosmos SDK native multisig created off-chain
-export const DEPLOYER = "mars15mwq8jc7sf0r8hu6phahfsmqg3fagt7ysyd3un";
+export const DEPLOYER = "mars1skwmcsesjj99hye93smjz88rh0qndhvahewr60";
 
 // Contract addresses are derived determinictically from code id and instance id, which we can
 // predict beforehand.
