@@ -26,10 +26,12 @@ const accounts: Accounts = JSON.parse(
 const balances: Balance[] = [];
 
 // faucet gets 100,000 MARS
-balances.push({
-  address: accounts.faucet!,
-  coins: coins(100_000_000_000),
-});
+if (!!accounts.faucet) {
+  balances.push({
+    address: accounts.faucet,
+    coins: coins(100_000_000_000),
+  });
+}
 
 // each validator gets 1 MARS
 for (const validator of accounts.validators) {
