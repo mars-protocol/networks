@@ -50,9 +50,9 @@ msgs.push({
     sender: DEPLOYER,
     wasm_byte_code: cw3Wasm.toString("base64"),
     instantiate_permission: {
-      permission: "AnyOfAddresses",
+      permission: "Everyone",
       address: "",
-      addresses: [DEPLOYER],
+      addresses: [],
     },
   },
 });
