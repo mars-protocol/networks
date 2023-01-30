@@ -67,9 +67,9 @@ msgs.push({
     msg: {
       owner: CONTRACTS.VESTING_OWNER,
       unlock_schedule: {
-        start_time: 1661990400,
-        cliff: 31536000,
-        duration: 94694400,
+        start_time: 1661990400, // September 1, 2022 12:00:00 AM
+        cliff: 31536000, // 1 year
+        duration: 94694400, // 3 years
       },
     },
     funds: [],
@@ -85,7 +85,7 @@ msgs.push({
     label: "mars-delegator",
     msg: {
       bond_denom: "umars",
-      ending_time: 1672531199, // 2022-12-31 23:59:59 UTC
+      ending_time: 1677628800, // March 1, 2023 12:00:00 AM - 1 month after launch
     },
     funds: [
       {
@@ -113,11 +113,11 @@ msgs.push({
           weight: 1,
         },
         {
-          addr: "mars149j66kcxshy823u6llukn4rm9xqxntu2x59n6z",
+          addr: "mars17fej0e67gnc0wsan246wpuc6tepgp5peq7zca0",
           weight: 1,
         },
         {
-          addr: "mars1wny49dmcp8we5hqxjs06t0z3hkyrvf9mz2zhqk",
+          addr: "mars1rkxzg6hjv98qu7js592hwh3czej2eng28fu3dc",
           weight: 1,
         },
       ],
