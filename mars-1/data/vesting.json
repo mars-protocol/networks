@@ -1,7 +1,7 @@
 [
   {
     "address": "mars17p9rzwnnfxcjp32un9ug7yhhzgtkhvl9jfksztgw5uh69wac2pgs0gfvxm",
-    "amount": "88275909330000",
+    "amount": "87925909330000",
     "schedule": {
       "start_time": 1614556800,
       "cliff": 0,
@@ -339,6 +339,15 @@
       "start_time": 0,
       "cliff": 0,
       "duration": 1
+    }
+  },
+  {
+    "address": "mars1zd5gzppzjmqcwq4z7y5ajm55xrvf743wl3cv3x",
+    "amount": "350000000000",
+    "schedule": {
+      "start_time": 1675123200,
+      "cliff": 15768000,
+      "duration": 94694400
     }
   },
   {
